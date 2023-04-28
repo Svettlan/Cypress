@@ -2,8 +2,9 @@
 /// <reference types = "cypress" />    
 
 // ----------------------------- Комады для  cypress ---------------------------
-// npm install cypress --save-dev
-// npx cypress open
+// npm init                        - инициализирует запуск проекта, сознается файл package.json
+// npm install cypress --save-dev  - 
+// npx cypress open                - запуск тестов
 // --------------------------------- ТЕСТЫ ------------------------------------
 describe('first test', () =>{
     beforeEach(() => {
