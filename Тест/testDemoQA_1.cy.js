@@ -21,7 +21,7 @@ it("Verification menu item names - Variant 2', function () {
   cy.get('.card')
     .should have.length', expectedMenuItemNames.length)
     .then (($els) =>{
-     cy.log(Cypress.$.makeArray($els).map
+     cy.log(Cypress.$.makeArray($els).map($el => $el.innerText))
     });
   })
 })
