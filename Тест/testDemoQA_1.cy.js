@@ -8,9 +8,9 @@ const expectedMenuItemNames = [
    'Book Store Application".
 ];
 it("Verification menu item names - Variant 1', function () {
-  cy.visit('https://demoga.com");                    //
-  cy.get('.card')
-    .should have.length', expectedMenuItemNames.length)
+  cy.visit('https://demoga.com");                    // зайти на сайт с адресом
+  cy.get('.card')                                    // найти .card
+    .should have.length', expectedMenuItemNames.length) //
     .each((el, idx) => {
       cy.log(el) 
       expect(el.text()).to.be.equal(expectedMenuItemNames[idx]);
