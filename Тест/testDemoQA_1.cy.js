@@ -1,5 +1,6 @@
+// Как получить информацию от группы элементов
 describe('DemoQA Menu-tiles', () => {
-const expectedMenuItemNames = [
+const expectedMenuItemNames = [    // Массив из тестовой докупентации / тест кейса
   'Elements",
   'Forms', 
    'Alerts, Frame & Windows',
@@ -7,6 +8,12 @@ const expectedMenuItemNames = [
    'Interactions',
    'Book Store Application".
 ];
+  before('',() => {
+    cy.log ('before');
+ });
+  beforeEach('',() => {
+    cy.log ('before Each');
+ });
 it("Verification menu item names - Variant 1', function () {
   cy.visit('https://demoga.com");                    // зайти на сайт с адресом
   cy.get('.card')                                    // найти .card
@@ -16,7 +23,7 @@ it("Verification menu item names - Variant 1', function () {
       expect(el.text()).to.be.equal(expectedMenuItemNames[idx]);
     });
   })
-it("Verification menu item names - Variant 2', function () {
+it("Verification menu item names - Variant 2', function () {    
   cy.visit('https://demoga.com");
   cy.get('.card')
     .should have.length', expectedMenuItemNames.length)     // сравнение массивов библиотекой чай
