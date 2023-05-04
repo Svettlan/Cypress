@@ -20,7 +20,7 @@ it.skip("Verification menu item names - Variant 1', function () {     // skip - 
     .should have.length', expectedMenuItemNames.length) //
     .each((el, idx) => {
       cy.log(el) 
-      expect(el.text()).to.be.equal(expectedMenuItemNames[idx]);
+      expect(el.text()).to.be.equal(expectedMenuItemNames[idx]);   // сравнить ожидаемый рез-т с фактическим
     });
   })
  xit("Verification menu item names - Variant 2', function () {    // x (xit) - пропустить тест
