@@ -19,9 +19,10 @@ it("Verification menu item names - Variant 1', function () {
 it("Verification menu item names - Variant 2', function () {
   cy.visit('https://demoga.com");
   cy.get('.card')
-    .should have.length', expectedMenuItemNames.length)
+    .should have.length', expectedMenuItemNames.length)     // сравнение массивов библиотекой чай
     .then (($els) =>{
-     cy.log(Cypress.$.makeArray($els).map($el => $el.innerText))
+     return Cypress.$.makeArray($els).map($el => $el.innerText)
     });
-  })
+     //.should('deep.equal', expectedMenuItemNames)
+  });
 })
