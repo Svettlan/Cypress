@@ -14,7 +14,7 @@ const expectedMenuItemNames = [    // Массив из тестовой док�
   beforeEach('',() => {
     cy.log ('before Each');
  });
-it("Verification menu item names - Variant 1', function () {
+it.skip("Verification menu item names - Variant 1', function () {     // skip - пропустить тест
   cy.visit('https://demoga.com");                    // зайти на сайт с адресом
   cy.get('.card')                                    // найти .card
     .should have.length', expectedMenuItemNames.length) //
@@ -23,7 +23,7 @@ it("Verification menu item names - Variant 1', function () {
       expect(el.text()).to.be.equal(expectedMenuItemNames[idx]);
     });
   })
-it("Verification menu item names - Variant 2', function () {    
+ xit("Verification menu item names - Variant 2', function () {    // x (xit) - пропустить тест
   cy.visit('https://demoga.com");
   cy.get('.card')
     .should have.length', expectedMenuItemNames.length)     // сравнение массивов библиотекой чай
@@ -32,4 +32,10 @@ it("Verification menu item names - Variant 2', function () {
     });
      //.should('deep.equal', expectedMenuItemNames)
   });
+ after('',() => {
+    cy.log ('After');
+ });
+   afterEach('',() => {
+    cy.log ('After each');
+ });
 })
