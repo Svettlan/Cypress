@@ -28,14 +28,24 @@ it.skip("Verification menu item names - Variant 1', function () {     // skip - 
   cy.get('.card')
     .should have.length', expectedMenuItemNames.length)     // сравнение массивов библиотекой чай
     .then (($els) =>{
-     return Cypress.$.makeArray($els).map($el => $el.innerText)
+    // return Cypress.$.makeArray($els).map($el => $el.innerText)
+       expect(actual).to.be.deep.equal(expectedMenuItemNames)
     });
      //.should('deep.equal', expectedMenuItemNames)
   });
- after('',() => {
-    cy.log ('After');
- });
-   afterEach('',() => {
-    cy.log ('After each');
- });
-})
+//   after('',() => {
+//    cy.log ('After');
+// });
+//   afterEach('',() => {
+//    cy.log ('After each');
+// });
+//})
+it("Verification menu item names - Variant 3', function () {    // x (xit) - пропустить тест
+  cy.visit('https://demoga.com");
+  cy.get('.card')
+    .should have.length', expectedMenuItemNames.length)     // сравнение массивов библиотекой чай
+    .then (($els) =>{
+     return Cypress._map($els, 'innerText')
+    });
+    .should('deep.equal', expectedMenuItemNames)
+  });
