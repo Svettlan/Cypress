@@ -33,7 +33,7 @@ describe('DemoQA Menu-titles', () => {        // Нвзвание группы �
         // expect(actual).to.be.deep.equal(expectedMenuItemNames)       // сравнение (другой способ) актуального результата с массивом    
       });
        //.should('deep.equal', expectedMenuItemNames)
-    });
+    
   //   after('',() => {
   //    cy.log ('After');
   // });
@@ -50,3 +50,21 @@ describe('DemoQA Menu-titles', () => {        // Нвзвание группы �
       })
       .should('deep.equal', expectedMenuItemNames)
     });
+
+// ------------------  Проверка input с плейсхолдером -----------------------
+    it.only('Form filling',() => {
+      cy.visit('https://demoqa.com/'); 
+      // cy.visit('/');
+      cy.get('.card:nth-child(2)').click();                
+      cy.get('.element-group:nth-child(2)>div').click();
+      cy.get('#firstName')
+      .should('have.text', '')
+      .type('Svetlan{enter}')
+      .should('have.value', 'Svetlan')
+      //--------------- Проверка соответствия цвета ----------------------
+      // cy.get('#submit').click();
+      // cy.get('#firstName')
+      .should('have.css', 'border-color', 'rgb(40, 167, 69)');
+    })
+
+  })
